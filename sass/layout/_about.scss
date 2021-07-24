@@ -1,0 +1,41 @@
+.about {
+  background-color: #f5f4fa;
+}
+.about-head {
+  font-weight: 700;
+  color: var(--secondary-font-color);
+  font-size: 36px;
+  line-height: 1.17;
+  text-align: center;
+}
+.about-list {
+  list-style: none;
+  display: flex;
+  margin-top: 50px;
+}
+.about-list-info:not(:last-child) {
+  margin-right: 30px;
+}
+.about-list-info {
+  background: var(--primary-white);
+  box-shadow: var(--box-shadow);
+  border-radius: 0px 0px 4px 4px;
+}
+.about-list-name {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.17;
+}
+.about-box {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.about-list-position {
+  color: var(--primary-font-color);
+  font-size: 16px;
+  line-height: 1.17;
+  margin-top: 10px;
+}
