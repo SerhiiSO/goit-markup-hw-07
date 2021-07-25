@@ -2,62 +2,70 @@
   padding-top: 24px;
   padding-bottom: 25px;
   border: 1px solid #ececec;
+
+  &__container {
+    display: flex;
+    align-items: center;
+  }
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-}
-.header-nav {
+.nav {
   display: flex;
   align-items: center;
 }
 
-.nav-list {
+.nav__list {
+  @extend %list;
   display: flex;
   align-items: center;
 }
-.menu-link-list {
+.nav__item {
   position: relative;
+
+  &:not(:last-child) {
+    margin-right: 50px;
+  }
 }
-.menu-link-list:not(:last-child) {
-  margin-right: 50px;
-}
-.menu-link {
+
+.nav__link {
+  @extend %link;
   color: var(--secondary-font-color);
   font-weight: 500;
   line-height: 1.14;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    color: var(--link-hover-focus);
+  }
 }
 
-.link.current {
+.nav__link--current {
   color: var(--link-hover-focus);
+  &::after {
+    position: absolute;
+    left: 0;
+    bottom: -33px;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: var(--link-hover-focus);
+  }
 }
-.link.current::after {
-  position: absolute;
-  left: 0;
-  bottom: -33px;
-  display: block;
-  content: "";
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  background-color: var(--link-hover-focus);
-}
-.menu-link-list .link:focus,
-.menu-link-list .link:hover {
-  color: var(--link-hover-focus);
-}
-.contacts {
+
+.contacts__list {
+  @extend %list;
   list-style: none;
   display: flex;
   align-items: center;
   margin-left: auto;
 }
-.header-contacts:not(:first-child) {
+.contacts__item:not(:first-child) {
   margin-left: 50px;
 }
-.mail-tel {
+.contacts__link {
+  @extend %link;
   display: flex;
   text-decoration: none;
   color: var(--primary-font-color);
@@ -67,15 +75,15 @@
   align-items: center;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:focus,
+  &:hover {
+    color: var(--link-hover-focus);
+    fill: var(--primary-accent-color);
+  }
 }
-.mail-tel-pic {
+.contacts__icon {
   fill: currentColor;
   margin-right: 10px;
   align-items: center;
-}
-
-.mail-tel:focus,
-.mail-tel:hover {
-  color: var(--link-hover-focus);
-  fill: var(--primary-accent-color);
 }

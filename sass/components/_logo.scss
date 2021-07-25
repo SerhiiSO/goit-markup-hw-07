@@ -1,15 +1,17 @@
-.logo-header {
-  font-family: var(--secondary-font);
-  font-weight: 700;
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: 0.03em;
-  color: var(--logo-second-color);
-  text-decoration: none;
+.header__logo {
+  @extend %logo, %link;
   margin-right: 93px;
   margin-left: 0;
+
+  &--acent {
+    color: var(--logo-second-color);
+  }
 }
 
-.logo-part {
-  color: var(--logo-accent-color);
+.footer__logo {
+  @extend %logo, %link;
+
+  &--accent {
+    color: var(--logo-footer-color);
+  }
 }
